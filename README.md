@@ -3,6 +3,8 @@
 First you should download the database finaltaskjava.sql as it the database connected to the program and initialized with some data to run the project 
 
 [Home Page](http://localhost:8080)
+
+
 ## Some Apis provided by the application 
 
 [View all characters](http://localhost:8080/api/characters)     
@@ -15,4 +17,5 @@ First you should download the database finaltaskjava.sql as it the database conn
 [Add a character](http://localhost:8080/api/addCharacter)         
 
 
-
+## Gererated Documentations for the API 
+[Line to the documentation](http://localhost:8080/swagger-ui.html)         
