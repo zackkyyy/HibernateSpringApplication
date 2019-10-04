@@ -1,0 +1,148 @@
+<!--  <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<form action="/api/character/add" method="post">
+ <dev>
+     <p>Name:</p>
+     <input type="text" name="name" required="true">
+ </dev>
+  <dev>
+      <p>Level:</p>
+      <input type="text" name="level" required="true">
+  </dev>
+
+  <dev>
+      <select name = "Classes" >
+          <option  selected th:each="class : ${Classes} ">
+              <p> </p>
+              <p th:text="${class.name}"></p>
+          </option>
+      </select>
+  </dev>
+
+  <dev>
+
+      <select name = "Users" >
+          <option  selected th:each="user : ${Users} ">
+              <p th:text="${user.userName}"></p>
+          </option>
+      </select>
+  </dev>
+
+  <input type="submit" value="Done">
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Add Character</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Task 20</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/api/users">View Users</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/api/characters">View Characters</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/api/classes">View Classes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/api/user/1">User by ID</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/api/character/1">Character by ID</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/api/class/Warrior">Class by name</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/api/addUser">Create User</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/api/addCharacter">Create Character</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<form class="text-center border border-light p-5" action="/api/character/add" method="post">
+    <fieldset>
+
+        <p class="h4 mb-4">Character information</p>
+
+        <div class="form-group row">
+            <label for="inputName" class="col-sm-2 col-form-label">User name</label>
+
+            <div class="col-sm-2">
+                <input type="text" name="name" class="form-control" id="inputName" placeholder="User name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputLevel" class="col-sm-2 col-form-label">Level</label>
+
+            <div class="col-sm-2">
+                <input type="text" name="level" class="form-control" id="inputLevel" placeholder="level">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="inputCLass" class="col-sm-2 col-form-label" >Class</label>
+            <select id="inputCLass" class="form-control col-sm-3"name="Classes">
+                <option value="" disabled selected></option>
+                <option selected th:each="class : ${Classes} ">
+                    <p th:text="${class.name}"></p>
+                </option>
+            </select>
+        </div>
+
+        <div class="form-group row">
+            <label for="inputUser" class="col-sm-2 col-form-label">User</label>
+
+            <select id="inputUser" class="form-control col-sm-3" name="Users">
+                <option value="" disabled selected></option>
+                <option selected th:each="user : ${Users} ">
+                    <p th:text="${user.userName}"></p>
+                </option>
+
+            </select>
+
+
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </fieldset>
+
+
+</form>
+</body>
+</html>
+</form>
+</body>
+</html>
